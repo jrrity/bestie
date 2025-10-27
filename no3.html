@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>I’m Sorry Bestie 😭💖</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        position: relative;
+      }
+      #no {
+        position: absolute;
+        transition: left 0.25s ease, top 0.25s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="gif-wrapper">
+        <div
+          class="tenor-gif-embed"
+          data-postid="15195810"
+          data-share-method="host"
+          data-aspect-ratio="1"
+          data-width="100%"
+        >
+          <a
+            href="https://tenor.com/view/couple-forgive-me-asking-for-forgiveness-begging-crying-gif-15195810"
+            >Forgive Me GIF</a
+          >
+          from
+          <a href="https://tenor.com/search/forgive-me-stickers"
+            >Forgive Me Stickers</a
+          >
+        </div>
+      </div>
+
+      <h1>Hey Bestie... I’m really sorry 😔💞</h1>
+      <p>
+        I know we argued, and I might’ve hurt your feelings 😢<br />
+        But you mean a lot to me, and I can’t stay mad at you for long ❤️
+      </p>
+
+      <div class="buttons">
+        <button id="yes" onclick="location.href='yes.html'">
+          Okay fine... I forgive you 😌💖
+        </button>
+        <button id="no">No 😤</button>
+      </div>
+    </div>
+
+    <script async src="https://tenor.com/embed.js"></script>
+
+    <script>
+      const noBtn = document.getElementById("no");
+
+      noBtn.addEventListener("mouseover", () => {
+        const container = document.querySelector(".container");
+        const maxX = container.clientWidth - noBtn.offsetWidth;
+        const maxY = container.clientHeight - noBtn.offsetHeight;
+
+        const randomX = Math.random() * maxX;
+        const randomY = Math.random() * maxY;
+
+        noBtn.style.left = `${randomX}px`;
+        noBtn.style.top = `${randomY}px`;
+      });
+    </script>
+  </body>
+</html>
