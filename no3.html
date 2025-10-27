@@ -41,7 +41,7 @@
         </div>
       </div>
 
-      <h1>Hey Bestie... I’m really sorry 😔💞</h1>
+      <h1>Sayani, my Bestie... I’m really sorry 😔💞</h1>
       <p>
         I know we argued, and I might’ve hurt your feelings 😢<br />
         But you mean a lot to me, and I can’t stay mad at you for long ❤️
@@ -59,18 +59,26 @@
 
     <script>
       const noBtn = document.getElementById("no");
+      const container = document.querySelector(".container");
 
-      noBtn.addEventListener("mouseover", () => {
-        const container = document.querySelector(".container");
-        const maxX = container.clientWidth - noBtn.offsetWidth;
-        const maxY = container.clientHeight - noBtn.offsetHeight;
-
+      function moveButton() {
+        const maxX = container.clientWidth - noBtn.offsetWidth - 20;
+        const maxY = container.clientHeight - noBtn.offsetHeight - 20;
         const randomX = Math.random() * maxX;
         const randomY = Math.random() * maxY;
-
         noBtn.style.left = `${randomX}px`;
         noBtn.style.top = `${randomY}px`;
+      }
+
+      // Desktop hover
+      noBtn.addEventListener("mouseover", moveButton);
+
+      // Mobile tap
+      noBtn.addEventListener("touchstart", (e) => {
+        e.preventDefault();
+        moveButton();
       });
     </script>
   </body>
 </html>
+
